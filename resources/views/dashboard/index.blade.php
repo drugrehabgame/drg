@@ -1,38 +1,108 @@
 @extends('layouts.master')
 @section('title', 'Dashboard')
 @section('content')
-<div class="jumbotron">
-  <div class="container">
-    <h1>Dashboard</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-    <p><a role="button" href="#" class="btn btn-primary btn-lg">Learn more »</a></p>
-  </div>
-</div>
-
-<div class="container">
-  <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+      <div class="dashboard-column">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="http://lorempixel.com/200/200/" class="profile-image"/>
+          </div>
+          <div class="col-md-8">
+            <h3>{{Auth::user()->first_name}} {{Auth::user()->first_name}}</h3>
+            <ul class="user-dashboard">
+              <li class="level"><i class="fa fa-trophy"></i> Level <span class="game-actions level">5</span></li>
+              <li class="xp"><i class="fa fa-bolt"></i> XP: <span class="game-actions xp">200</span></li>
+              <li class="hp"><i class="fa fa-medkit"></i> HP: <span class="game-actions hp">233</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="dashboard-section">
+          <h3 class="text-center"><i class="fa fa-gift"></i> Rewards</h3>
+          <ul class="rewards-list">
+            <li>Enjoy a free coffee</li>
+            <li>Claim your 1 month subscription to Spotify</li>
+          </ul>
+        </div>
+        <div class="dashboard-section">
+          <h3 class="text-center"><i class="fa fa-area-chart"></i> Stats</h3>
+          <div id="user-graph">
+
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+      <div class="dashboard-column">
+        <h3 class="text-center"><i class="fa fa-binoculars"></i> Quests</h3>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Quest 1
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Quest 2
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Quest 3
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
    </div>
     <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+      <div class="allies-tabs dashboard-column">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#allies" aria-controls="home" role="tab" data-toggle="tab">Allies</a></li>
+          <li role="presentation"><a href="#journal" aria-controls="profile" role="tab" data-toggle="tab">Journal</a></li>
+          <li role="presentation"><a href="#history" aria-controls="messages" role="tab" data-toggle="tab">History</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="allies">
+            <p>Allies content</p>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="journal">
+            <p>Journal content</p>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="history">
+            <p>History content</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-
-  <hr>
-
-  <footer>
-    <p>&copy; 2015 Company, Inc.</p>
-  </footer>
-</div>
 @stop
