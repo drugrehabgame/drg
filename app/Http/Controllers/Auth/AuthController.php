@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -37,7 +39,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
     /**
@@ -64,9 +66,31 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'character_name' => $data['character_name'],
+            'status' => 'A',
+            'gender'=>$data['gender'],
+            'playlyfecode'=>$data['playlyfecode']
         ]);
     }
+	
+	public function getLogin()
+	{
+		return view('auth.login');
+	}
+	
+	public function postLogin(Request $request)
+	{
+		$credentials = array('email'=>$request->input('email'), 'password'=>$request->input('password'));
+		$remember = $request->input('remember',0);
+		if (Auth::attempt($credentials, $remember)) {
+            $success = 1;
+        } else {
+        	$success = 0;
+        }
+		return response()->json(array('success'=>$success));
+	}
 }

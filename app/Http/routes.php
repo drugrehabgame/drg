@@ -11,9 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//default route
+Route::get('/', function() {
+	if (Auth::check()) {
+		return redirect('dashboard');
+	} else {
+		return redirect('welcome');
+	}
 });
+
+//auth
+
+
+//Route::get('welcome', 'Auth\AuthController@getLogin');
+//Route::post('login', 'Auth\AuthController@postLogin');
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +37,21 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+//Route::group(['middleware' => ['web']], function () {
+//    Route::get('welcome', 'Auth\AuthController@getLogin');
+//	Route::post('login', 'Auth\AuthController@postLogin');
+//	Route::get('logout', 'Auth\AuthController@logout');
+//});
+
+//Route::group(['middleware' => ['web','auth']], function () {
+//    Route::get('dashbaord', 'Dashboard@index');
+//});
+
+//auth
+Route::get('welcome', 'Auth\AuthController@getLogin');
+Route::post('login', 'Auth\AuthController@postLogin');
+Route::get('logout', 'Auth\AuthController@logout');
+
+//dashbaord
+//Route::get('dashboard', ['middleware' => 'auth', 'uses' => 'Dashboard@index']);
+Route::get('dashboard', ['uses' => 'Dashboard@index']);
