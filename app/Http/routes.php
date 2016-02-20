@@ -11,15 +11,6 @@
 |
 */
 
-//default route
-Route::get('/', function() {
-	if (Auth::check()) {
-		return redirect('dashboard');
-	} else {
-		return redirect('welcome');
-	}
-});
-
 //auth
 
 
@@ -37,14 +28,14 @@ Route::get('/', function() {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    Route::get('welcome', 'Auth\AuthController@getLogin');
+Route::group(['middleware' => ['web', 'guest']], function () {
+    Route::get('/', 'Auth\AuthController@getLogin');
 	Route::post('login', 'Auth\AuthController@postLogin');
-	Route::get('goodbye', 'Auth\AuthController@doLogout');
 });
 
 Route::group(['middleware' => ['web','auth']], function () {
    Route::get('dashboard', 'Dashboard@index');
+	Route::get('goodbye', 'Auth\AuthController@doLogout');
 });
 
 //auth

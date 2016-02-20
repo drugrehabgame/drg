@@ -9,6 +9,11 @@ use App\Http\Controllers\Controller;
 
 class Dashboard extends Controller
 {
+    public function root()
+    {
+
+    }
+
     public function index()
     {
     	return view('dashboard.index');

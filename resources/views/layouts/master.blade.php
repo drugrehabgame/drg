@@ -92,7 +92,7 @@
     			
     			$.post("login",data, function(data) {
     				if (data.success) {
-    					window.location = '/dashboard';
+    					//window.location = '/dashboard';
     				} else {
     					//enable and let them know...
 	                    $('#login_submit').text('Sign In');
