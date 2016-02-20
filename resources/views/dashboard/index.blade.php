@@ -26,9 +26,7 @@
         </div>
         <div class="dashboard-section">
           <h3 class="text-center"><a href="{{url('/stats')}}"><i class="fa fa-area-chart"></i> Stats</a></h3>
-          <div id="user-graph">
-
-          </div>
+          <canvas id="user-graph" height="400"></canvas>
         </div>
       </div>
     </div>
@@ -152,7 +150,6 @@
             <a href="{{url('/journal')}}">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="history">
-            <p>History content</p>
             <ul>
               <li>Mon 22-Feb-2016 @ 3:40 mood set to 3/4</li>
               <li>Mon 22-Feb-2016 @ 3:40 mood set to 3/4</li>

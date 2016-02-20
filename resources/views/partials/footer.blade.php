@@ -47,68 +47,84 @@
         });
     });
 </script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="{{url('/js/Chart.min.js')}}"></script>
 <script>
     $(function () {
-        $('#user-graph').highcharts({
-            chart: {
-                type: 'spline'
-            },
-            title: {
-                text: ''
-            },
-            xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            },
-            yAxis: {
-                title: {
-                    text: 'Temperature'
+        var ctx = $("#user-graph").get(0).getContext("2d");
+        var data = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [65, 59, 80, 81, 56, 55, 40]
                 },
-                labels: {
-                    formatter: function () {
-                        return this.value + '°';
-                    }
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [28, 48, 40, 19, 86, 27, 90]
                 }
-            },
-            tooltip: {
-                crosshairs: true,
-                shared: true
-            },
-            plotOptions: {
-                spline: {
-                    marker: {
-                        radius: 4,
-                        lineColor: '#666666',
-                        lineWidth: 1
-                    }
-                }
-            },
-            series: [{
-                name: 'Tokyo',
-                marker: {
-                    symbol: 'square'
-                },
-                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
-                    y: 26.5,
-                    marker: {
-                        symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
-                    }
-                }, 23.3, 18.3, 13.9, 9.6]
+            ]
+        };
+        var options = {
 
-            }, {
-                name: 'London',
-                marker: {
-                    symbol: 'diamond'
-                },
-                data: [{
-                    y: 3.9,
-                    marker: {
-                        symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
-                    }
-                }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-            }]
-        });
+            ///Boolean - Whether grid lines are shown across the chart
+            scaleShowGridLines : true,
+
+            //String - Colour of the grid lines
+            scaleGridLineColor : "rgba(0,0,0,.05)",
+
+            //Number - Width of the grid lines
+            scaleGridLineWidth : 1,
+
+            //Boolean - Whether to show horizontal lines (except X axis)
+            scaleShowHorizontalLines: true,
+
+            //Boolean - Whether to show vertical lines (except Y axis)
+            scaleShowVerticalLines: true,
+
+            //Boolean - Whether the line is curved between points
+            bezierCurve : true,
+
+            //Number - Tension of the bezier curve between points
+            bezierCurveTension : 0.4,
+
+            //Boolean - Whether to show a dot for each point
+            pointDot : true,
+
+            //Number - Radius of each point dot in pixels
+            pointDotRadius : 4,
+
+            //Number - Pixel width of point dot stroke
+            pointDotStrokeWidth : 1,
+
+            //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+            pointHitDetectionRadius : 20,
+
+            //Boolean - Whether to show a stroke for datasets
+            datasetStroke : true,
+
+            //Number - Pixel width of dataset stroke
+            datasetStrokeWidth : 2,
+
+            //Boolean - Whether to fill the dataset with a colour
+            datasetFill : true,
+
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+        };
+        var myLineChart = new Chart(ctx).Line(data, options);
     });
 </script>
 @endpush

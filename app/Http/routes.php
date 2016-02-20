@@ -24,6 +24,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('messages', 'Messageboard@getMessages');
     Route::get('quests', 'QuestsController@index');
     Route::get('journal', 'JournalController@index');
+    Route::post('journal', 'JournalController@store');
     Route::get('allies', 'AlliesController@index');
     Route::get('rewards', 'RewardsController@index');
     Route::get('stats', 'StatsController@index');

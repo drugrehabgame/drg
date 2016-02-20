@@ -99,6 +99,11 @@ header nav.navbar #mood-form{
     border-color: transparent;
     color: #FFFFFF;
 }
+#user-graph{
+    width: 100% !important;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
 .dashboard-column .tab-content{
     padding-top: 15px;
 }
