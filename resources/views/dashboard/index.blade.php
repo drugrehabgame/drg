@@ -18,14 +18,14 @@
           </div>
         </div>
         <div class="dashboard-section">
-          <h3 class="text-center"><i class="fa fa-gift"></i> Rewards</h3>
+          <h3 class="text-center"><a href="{{url('/rewards')}}"><i class="fa fa-gift"></i> Rewards</a></h3>
           <ul class="rewards-list">
             <li>Enjoy a free coffee</li>
             <li>Claim your 1 month subscription to Spotify</li>
           </ul>
         </div>
         <div class="dashboard-section">
-          <h3 class="text-center"><i class="fa fa-area-chart"></i> Stats</h3>
+          <h3 class="text-center"><a href="{{url('/stats')}}"><i class="fa fa-area-chart"></i> Stats</a></h3>
           <div id="user-graph">
 
           </div>
@@ -34,7 +34,7 @@
     </div>
     <div class="col-md-4">
       <div class="dashboard-column">
-        <h3 class="text-center"><i class="fa fa-binoculars"></i> Quests</h3>
+        <h3 class="text-center"><a href="{{url('/quests')}}"><i class="fa fa-binoculars"></i> Quests</a></h3>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
@@ -92,10 +92,10 @@
         <!-- Tab panes -->
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active" id="allies">
-            <p>Allies content</p>
+            <a href="{{url('/allies')}}">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="journal">
-            <p>Journal content</p>
+            <a href="{{url('/journal')}}">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="history">
             <p>History content</p>
