@@ -27,9 +27,6 @@
   </head>
 
   <body>
-
-
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -39,28 +36,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Drug Rehab Game</a>
+          <a class="navbar-brand" href="{{url('/')}}">Drug Rehab Game</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <?php if (Auth::check()):?>
+          @if (Auth::check()):
           	<div class="navbar-right">
-          		<span style="color: #fff;">Welcome <?php echo Auth::user()->first_name;?></span>
-          		<a href="/goodbye">[Log Out]</a>
+          		<span style="color: #fff;">Welcome {{Auth::user()->first_name}}</span>
+          		<a href="{{url('/goodbye')}}">[Log Out]</a>
           	</div>
-          <?php else: ?>
-          <form id="login_form" class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" id="login_email" placeholder="Email" value="drugrehabgame@gmail.com" class="form-control" required="required">
-            </div>
-            <div class="form-group">
-              <input type="password" id="login_password" placeholder="Password" value="drugrehabgame123" class="form-control" required="required">
-            </div>
-            <button type="submit" id="login_submit" class="btn btn-success">Sign in</button>
-          </form>
-         <?php endif;?>
+          @else
+			@include('partials.login-form')
+         @endif
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
+
 
     @yield('content')
     
@@ -88,11 +78,11 @@
     			
     			//autocomplete
     			$('#login_submit').text('Signing in...');
+    			var loginUrl = "{{url('/login')}}";
     			
-    			
-    			$.post("login",data, function(data) {
+    			$.post(loginUrl,data, function(data) {
     				if (data.success) {
-    					//window.location = '/dashboard';
+    					window.location = ''{{url('/dashboard')}};
     				} else {
     					//enable and let them know...
 	                    $('#login_submit').text('Sign In');

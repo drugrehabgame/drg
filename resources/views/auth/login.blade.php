@@ -11,7 +11,6 @@
 
 <div class="container">
   <!-- Example row of columns -->
-  <i class="fa fa-anchor"></i>
   <div class="row">
     <div class="col-md-4">
       <h2>Heading</h2>
@@ -33,7 +32,7 @@
   <hr>
 
   <footer>
-    <p>&copy; 2015 Company, Inc.</p>
+    <p>&copy; 2015 DrugDrop, Inc.</p>
   </footer>
 </div>
 @stop
