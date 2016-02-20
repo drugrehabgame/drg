@@ -36,3 +36,11 @@
   </footer>
 </div>
 @stop
+
+@push('scripts')
+<script>
+$(function() {
+	
+});
+</script>	    
+@endpush

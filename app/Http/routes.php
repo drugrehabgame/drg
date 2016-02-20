@@ -2,23 +2,6 @@
 
 /*
 |--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-//auth
-
-
-//Route::get('welcome', 'Auth\AuthController@getLogin');
-//Route::post('login', 'Auth\AuthController@postLogin');
-
-/*
-|--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
 |
@@ -34,15 +17,9 @@ Route::group(['middleware' => ['web', 'guest']], function () {
 });
 
 Route::group(['middleware' => ['web','auth']], function () {
-   Route::get('dashboard', 'Dashboard@index');
-	Route::get('goodbye', 'Auth\AuthController@doLogout');
+    Route::get('dashboard', 'Dashboard@index');
+    Route::get('goodbye', 'Auth\AuthController@doLogout');
+    Route::get('messageboard', 'Messageboard@index');
+    Route::post('messageboard', 'Messageboard@addMessage');
+    Route::get('messages', 'Messageboard@getMessages');
 });
-
-//auth
-//Route::get('welcome', 'Auth\AuthController@getLogin');
-//Route::post('login', 'Auth\AuthController@postLogin');
-//Route::get('logout', 'Auth\AuthController@logout');
-
-//dashbaord
-//Route::get('dashboard', ['middleware' => 'auth', 'uses' => 'Dashboard@index']);
-//Route::get('dashboard', ['uses' => 'Dashboard@index']);

@@ -79,8 +79,8 @@
     			//autocomplete
     			$('#login_submit').text('Signing in...');
     			var loginUrl = "{{url('/login')}}";
-    			
-    			$.post(loginUrl,data, function(data) {
+
+				$.post(loginUrl,data, function(data) {
     				if (data.success) {
     					window.location = ''{{url('/dashboard')}};
     				} else {
@@ -91,8 +91,6 @@
 	    				$('#login_password').removeAttr("disabled");
 	    				$('#login_submit').removeAttr("disabled");	
     				}
-    				
-    				
                 });
     		});
     	});
