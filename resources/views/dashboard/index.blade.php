@@ -92,13 +92,72 @@
         <!-- Tab panes -->
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active" id="allies">
+            <div class="media">
+              <div class="media-left">
+                  <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">You are an inspiration, Keep up the good work</h4>
+                <p class="pull-right"><em class="small">Sunday 21-Feb-2016</em></p>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-left">
+                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Hey bro, loving your progress!</h4>
+                <p class="pull-right"><em class="small">Sunday 21-Feb-2016</em></p>
+              </div>
+            </div>
+            <div class="row allies-row">
+              <div class="col-md-3">
+                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
+                <P>Name name</P>
+              </div>
+              <div class="col-md-3">
+                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
+                <p>Jhon hammond</p>
+              </div>
+              <div class="col-md-3">
+                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
+                <p>Caribbean</p>
+              </div>
+              <div class="col-md-3">
+                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
+                <p>Johnny Bravo</p>
+              </div>
+            </div>
             <a href="{{url('/allies')}}">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="journal">
+            <form id="create-journal" action="{{url('/journal')}}" method="post">
+              <div class="pull-right">
+                <span class="action-ok journal-action"><i class="fa fa-check"></i></span>
+                <span class="action-cancel journal-action"><i class="fa fa-times"></i></span>
+              </div>
+              <textarea name="entry" placeholder="Today i feel..." class="form-control"></textarea>
+            </form>
+            <hr>
+            <p><em class="small pull-right">Past entries</em></p>
+            <div class="journal-entry">
+              <p><em>The lord jesus</em></p>
+            </div>
+            <div class="journal-entry">
+              <p><em>The lord jesus</em></p>
+            </div>
+            <div class="journal-entry">
+              <p><em>The lord jesus</em></p>
+            </div>
             <a href="{{url('/journal')}}">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="history">
             <p>History content</p>
+            <ul>
+              <li>Mon 22-Feb-2016 @ 3:40 mood set to 3/4</li>
+              <li>Mon 22-Feb-2016 @ 3:40 mood set to 3/4</li>
+            </ul>
+            <a href="{{url('/history')}}">More..</a>
           </div>
         </div>
 
