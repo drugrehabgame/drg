@@ -11,6 +11,7 @@
 
 <div class="container">
   <!-- Example row of columns -->
+  <i class="fa fa-anchor"></i>
   <div class="row">
     <div class="col-md-4">
       <h2>Heading</h2>

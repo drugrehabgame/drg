@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,8 +19,10 @@
 
 	<!-- Jquery UI -->
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-	
-	<link rel="stylesheet" href="/css/default.css">
+
+    <link rel="stylesheet" href="{{url('/css/font-awesome.min.css')}}">
+
+	<link rel="stylesheet" href="{{url('/css/default.css')}}">
 	
   </head>
 
