@@ -8,6 +8,14 @@
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="{{url('/js/jRate.min.js')}}"></script>
+<script>
+    $("#jRate").jRate({
+        startColor: "#FFE614",
+        endColor: "#FFCB14",
+        rating:0
+    });
+</script>
 <script>
     $(function() {
         $('.disable-on-submit').attr('disabled', false);
@@ -28,7 +36,7 @@
 
             $.post("login",data, function(data) {
                 if (data.success) {
-                    window.location = '/dashboard';
+                    window.location = "{{url('/dashboard')}}";
                 } else {
                     //enable and let them know...
                     $('#login_submit').text('Sign In');

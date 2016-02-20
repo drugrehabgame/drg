@@ -1,4 +1,4 @@
-<form id="login_form" class="navbar-form navbar-right">
+<form id="login_form" class="navbar-form pull-left">
     <div class="form-group">
         <input type="text" id="login_email" placeholder="Email" value="drugrehabgame@gmail.com" class="form-control disable-on-submit" required="required">
     </div>
