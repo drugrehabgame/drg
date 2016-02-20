@@ -52,50 +52,10 @@
     </nav>
 
 
-    @yield('content')
-    
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	
-	@push('scripts')
-    <script>
-    	$(function() {
-    		$( "#login_form" ).submit(function( event ) {
-    			event.preventDefault();
-    			
-    			var data = { 
-    				email : $('#login_email').val(), 
-    				password : $('#login_password').val(),
-    				_token : "{{ csrf_token() }}",
-    			};
-    			
-    			//disable buttons
-    			$('#login_email').attr('disabled', 'disabled');
-    			$('#login_password').attr('disabled', 'disabled');
-    			$('#login_submit').attr('disabled', 'disabled');
-    			
-    			//autocomplete
-    			$('#login_submit').text('Signing in...');
-    			var loginUrl = "{{url('/login')}}";
-
-				$.post(loginUrl,data, function(data) {
-    				if (data.success) {
-    					window.location = ''{{url('/dashboard')}};
-    				} else {
-    					//enable and let them know...
-	                    $('#login_submit').text('Sign In');
-	                    //remove all attr
-	                    $('#login_email').removeAttr("disabled");
-	    				$('#login_password').removeAttr("disabled");
-	    				$('#login_submit').removeAttr("disabled");	
-    				}
-                });
-    		});
-    	});
-    </script>
-	@endpush
+    <div class="container">
+      @yield('content')
+      @include('partials.footer')
+    </div>
 	
 	@stack('scripts')
 
