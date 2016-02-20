@@ -1,6 +1,6 @@
 .ui-loading { background:url('img/indicator.gif') no-repeat right center }
 .btn-success{background-image: none;background-color: #2FAD58;}
-body{background-image: url('img/motivational.jpg'); background-attachment: fixed; background-size: 100% auto}
+body{background-image: url('img/motivational.jpg');background-attachment: fixed;background-size: 100% auto;}
 a{transition: all 300ms}
 .media-object{
     display: block;
@@ -107,6 +107,9 @@ header nav.navbar #mood-form{
 .dashboard-column .tab-content{
     padding-top: 15px;
 }
+.dashboard-column h3 a{
+    color: #333;
+}
 .allies-row{
     margin-top: 30px;
 }
@@ -124,9 +127,6 @@ header nav.navbar #mood-form{
 }
 .journal-action{
     cursor: pointer;
-}
-.journal-action.action-ok{
-
 }
 .journal-action.action-cancel{
     color: #b41919;

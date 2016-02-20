@@ -10,7 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="{{url('/js/jRate.min.js')}}"></script>
 <script>
-    $("#jRate").jRate({
+    $(".jRate").jRate({
         startColor: "#FFE614",
         endColor: "#FFCB14",
         rating:0
