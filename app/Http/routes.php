@@ -45,13 +45,7 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => ['web','auth']], function () {
    Route::get('dashboard', 'Dashboard@index');
+   Route::get('messageboard', 'Messageboard@index');
+   Route::post('messageboard', 'Messageboard@addMessage');
+   Route::get('messages', 'Messageboard@getMessages');
 });
-
-//auth
-//Route::get('welcome', 'Auth\AuthController@getLogin');
-//Route::post('login', 'Auth\AuthController@postLogin');
-//Route::get('logout', 'Auth\AuthController@logout');
-
-//dashbaord
-//Route::get('dashboard', ['middleware' => 'auth', 'uses' => 'Dashboard@index']);
-//Route::get('dashboard', ['uses' => 'Dashboard@index']);

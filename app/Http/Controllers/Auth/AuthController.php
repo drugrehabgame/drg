@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use Auth;
-use Session;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -97,8 +96,8 @@ class AuthController extends Controller
 	
 	public function doLogout() 
 	{
-		Session::flush();
 		Auth::logout();
+		\Session::flush();
 		return redirect('welcome');
 	}
 }

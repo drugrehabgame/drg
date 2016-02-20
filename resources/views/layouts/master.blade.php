@@ -88,7 +88,6 @@
     			//autocomplete
     			$('#login_submit').text('Signing in...');
     			
-    			
     			$.post("login",data, function(data) {
     				if (data.success) {
     					window.location = '/dashboard';
@@ -100,8 +99,6 @@
 	    				$('#login_password').removeAttr("disabled");
 	    				$('#login_submit').removeAttr("disabled");	
     				}
-    				
-    				
                 });
     		});
     	});
