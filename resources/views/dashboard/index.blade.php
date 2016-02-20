@@ -157,7 +157,6 @@
             <a href="{{url('/history')}}">More..</a>
           </div>
         </div>
-
       </div>
     </div>
   </div>
