@@ -41,6 +41,12 @@
           <a class="navbar-brand" href="#">Drug Rehab Game</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+          <?php if (Auth::check()):?>
+          	<div class="navbar-right">
+          		<span style="color: #fff;">Welcome <?php echo Auth::user()->first_name;?></span>
+          		<a href="/goodbye">[Log Out]</a>
+          	</div>
+          <?php else: ?>
           <form id="login_form" class="navbar-form navbar-right">
             <div class="form-group">
               <input type="text" id="login_email" placeholder="Email" value="drugrehabgame@gmail.com" class="form-control" required="required">
@@ -50,6 +56,7 @@
             </div>
             <button type="submit" id="login_submit" class="btn btn-success">Sign in</button>
           </form>
+         <?php endif;?>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>

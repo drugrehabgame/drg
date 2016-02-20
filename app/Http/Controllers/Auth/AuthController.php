@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Auth;
+use Session;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -39,7 +40,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-         $this->middleware('guest', ['except' => 'getLogout']);
+         $this->middleware('guest', ['except' => 'doLogout']);
     }
 
     /**
@@ -92,5 +93,12 @@ class AuthController extends Controller
         	$success = 0;
         }
 		return response()->json(array('success'=>$success));
+	}
+	
+	public function doLogout() 
+	{
+		Session::flush();
+		Auth::logout();
+		return redirect('welcome');
 	}
 }

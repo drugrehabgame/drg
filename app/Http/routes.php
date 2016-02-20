@@ -37,21 +37,21 @@ Route::get('/', function() {
 |
 */
 
-//Route::group(['middleware' => ['web']], function () {
-//    Route::get('welcome', 'Auth\AuthController@getLogin');
-//	Route::post('login', 'Auth\AuthController@postLogin');
-//	Route::get('logout', 'Auth\AuthController@logout');
-//});
+Route::group(['middleware' => ['web']], function () {
+    Route::get('welcome', 'Auth\AuthController@getLogin');
+	Route::post('login', 'Auth\AuthController@postLogin');
+	Route::get('goodbye', 'Auth\AuthController@doLogout');
+});
 
-//Route::group(['middleware' => ['web','auth']], function () {
-//    Route::get('dashbaord', 'Dashboard@index');
-//});
+Route::group(['middleware' => ['web','auth']], function () {
+   Route::get('dashboard', 'Dashboard@index');
+});
 
 //auth
-Route::get('welcome', 'Auth\AuthController@getLogin');
-Route::post('login', 'Auth\AuthController@postLogin');
-Route::get('logout', 'Auth\AuthController@logout');
+//Route::get('welcome', 'Auth\AuthController@getLogin');
+//Route::post('login', 'Auth\AuthController@postLogin');
+//Route::get('logout', 'Auth\AuthController@logout');
 
 //dashbaord
 //Route::get('dashboard', ['middleware' => 'auth', 'uses' => 'Dashboard@index']);
-Route::get('dashboard', ['uses' => 'Dashboard@index']);
+//Route::get('dashboard', ['uses' => 'Dashboard@index']);
