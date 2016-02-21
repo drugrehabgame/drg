@@ -10,9 +10,19 @@ hr{border-top: 1px solid #03C9A9 !important;}
 .btn-big{width: 400px; padding: 14px; font-size: 1.2em;text-transform: uppercase;font-weight: bold; text-shadow: 1px 1px 3px rgba(117, 182, 127, 0.5)}
 .scroll{overflow: scroll;height: 300px; width: 100%;padding: 10px}
 .slider-container{height: 400px;margin-bottom: 20px}
+.panel-heading h3{
+    font-weight: bold;
+    text-transform: uppercase;
+}
 .page-title{font-family: 'Open Sans';font-size: 2em;font-weight: bold;text-transform: uppercase;color: #FFFFFF;text-align: center}
 #logo{padding: 0px 15px;}
 #logo img{width: 87px;}
+.panel-body{font-size: 1.15em; line-height: 180%;}
+.panel-body p{}
+.panel-body ul li{
+    list-style-type: circle;
+    margin-bottom: 10px;
+}
 ul li{list-style: none}
 header .user-mini-stats{margin-top: 14px;}
 header .user-mini-stats li{display: inline;margin-right: 20px;}
