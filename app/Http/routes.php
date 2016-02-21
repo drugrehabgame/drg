@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/info', 'PageController@getInfo');
+Route::get('/support', 'PageController@getSupport');
+
 Route::group(['middleware' => ['web', 'guest']], function () {
     Route::get('/', 'Auth\AuthController@getLogin');
     Route::get('/register', 'Auth\AuthController@getRegister');
