@@ -7,6 +7,7 @@
             <hr>
             <div class="row">
                 <form action="{{url('/journal')}}" action="post">
+                    <input type="hidden" value="{{ csrf_token()}}" name="_token"/>
                     <div class="col-md-2">
                         <img src="http://lorempixel.com/80/80/"/>
                     </div>
@@ -24,6 +25,28 @@
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="update-journal green-bg">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="http://lorempixel.com/80/80/"/>
+                </div>
+                <div class="col-md-10">
+                    <div class="pull-left">
+                        <h4>Frank Sine</h4>
+                        <p>16/02/2016</p>
+                        <p><i class="fa fa-check"></i> Positive</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p>Good work this week, I see you have done a few quests that is great.  why not try
+                and work on the things we talked about in our session.
+                Remember that 1. it's about emotion
+                2. identify the emotion
+                3. control the emotion
+                4. be free
+                Your doing well, keep at it.  Remeber our 3 steps back but 2 steps forward! IMPORTANT!!</p>
         </div>
     </div>
 @stop

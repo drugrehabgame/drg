@@ -1,6 +1,7 @@
 .ui-loading { background:url('img/indicator.gif') no-repeat right center }
 .btn-success{background-image: none;background-color: #2FAD58;}
 .white-color{color: #FFFFFF}
+.green-text{}
 body{
 background: url('img/bground.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -149,6 +150,9 @@ header nav.navbar #mood-form{
 .update-journal .mood-rating{
     float: left;
     margin-right: 20px;
+}
+.update-journal{
+    margin-bottom: 20px;
 }
 .update-journal img{
     width: 100%;
