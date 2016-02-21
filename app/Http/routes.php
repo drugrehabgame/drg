@@ -13,7 +13,7 @@
 
 Route::group(['middleware' => ['web', 'guest']], function () {
     Route::get('/', 'Auth\AuthController@getLogin');
-	
+	Route::post('/login', 'Auth\AuthController@postLogin');
 });
 
 Route::group(['middleware' => ['web','auth']], function () {
