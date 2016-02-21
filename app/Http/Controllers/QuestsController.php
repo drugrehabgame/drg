@@ -18,8 +18,8 @@ class QuestsController extends Controller
 			$gameId = $request->join;	
     	} else {
     		$gameId = $request->continue;
-    	} 
-    	
+    	}
+
 		$gameDetails = AppServiceProvider::getGameDetails(Auth::user()->id, $gameId);
 		$gameTasks = AppServiceProvider::getGameTasks(Auth::user()->id, $gameId);
 		//var_dump($gameDetails,'<br /><br />',$gameTasks); die();

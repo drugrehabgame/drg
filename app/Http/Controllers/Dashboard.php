@@ -16,7 +16,6 @@ class Dashboard extends Controller
 		$journal = UserJournal::where('user_id', \Auth::user()->id)
             ->orderBy('created_at', 'DESC')->paginate(6);
     	
-    	
     	$availableQuests = AppServiceProvider::getAvailableQuests(Auth::user()->id);
 		$userProfile = AppServiceProvider::getUserProfile(Auth::user()->id);
 		$profile = array();
@@ -28,10 +27,14 @@ class Dashboard extends Controller
 
 		$alliesPlayLife = AppServiceProvider::getFriends(Auth::user()->id);
 		$allies = array();
-		foreach ($alliesPlayLife['data'] as $ally) {
-			if ($ally['id'] != Auth::user()->id) {
-				$user = UserModel::find($ally['id']);
-				$allies[$ally['id']] = array('character_name'=>$user->character_name);
+		if($alliesPlayLife){
+			foreach ($alliesPlayLife['data'] as $ally) {
+				if ($ally['id'] != Auth::user()->id) {
+					$user = UserModel::find($ally['id']);
+					if(!is_null($user)){
+						$allies[$ally['id']] = array('character_name'=>$user->character_name);
+					}
+				}
 			}
 		}
 		

@@ -153,7 +153,7 @@
               </div>
               <?php endforeach;?>
             </div>
-            <!--<a href="{{url('/allies')}}">More..</a>-->
+            <a href="{{url('/allies')}}" class="read-more">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="journal">
             <form id="create-journal" action="{{url('/journal')}}" method="post">
@@ -183,14 +183,14 @@
               <p class="small pull-right"><em>{{$journal->created_at->diffForHumans()}}</em></p>
             </div>
             @endforeach
-            <a href="{{url('/journal')}}">More..</a>
+            <a href="{{url('/journal')}}" class="read-more">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="history">
             <ul>
               <li>Mon 22-Feb-2016 @ 3:40 mood set to 3/4</li>
               <li>Mon 22-Feb-2016 @ 3:40 mood set to 3/4</li>
             </ul>
-            <a href="{{url('/history')}}">More..</a>
+            <a href="{{url('/history')}}" class="read-more">More..</a>
           </div>
         </div>
       </div>

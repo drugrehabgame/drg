@@ -19,7 +19,8 @@
       
   <!--<div class="panel panel-default">          
   <!-- Default panel contents -->
-  <div class="panel-heading"><h3><?php $gamedetails['definition']['name'];?></h3></div>
+  <div class="panel-heading"><h3><?php $gamedetails['definition']['name'];
+ ?>
   <div class="panel-body">
     <p>Step 5. admitt to god, ourselves and to another human...</p>
   </div>
@@ -27,21 +28,12 @@
   <!-- List group -->
   <ul class="list-group">
     <li class="list-group-item text-right"><button type="button" class="btn btn-default">Details</button> <button type="button" class="btn btn-success">Join Quest</button> <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-right"></span></button></li>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-       </div>
-      </div>
-</div>
-
-*/?>
+  </ul>
 
 <div class="row">
    <div class="col-xs-2 col-md-1 col-lg-1">
         
-       </div>
+   </div>
    <div class="col-md-9">
       
      <div class="panel panel-default">          
@@ -52,7 +44,7 @@
               	<img src="http://lorempixel.com/100/100/" class="profile-image"/>
               </div>
               <div class="col-md-10">
-              	<h2><?php echo $gamedetails['definition']['name'];?></p></h2>
+              	<h2>{{$gamedetails['definition']['name']}}</h2>
               </div>
           </div>
 

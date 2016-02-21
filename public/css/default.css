@@ -15,6 +15,17 @@
     margin-bottom: 30px;
     margin-top: 120px;
 }
+.read-more{
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Open Sans;
+    text-align: right;
+    display: block;
+    padding-top: 10px;
+    font-style: italic;
+    text-decoration: underline;
+}
 .slideshow{
     max-height: 500px;
     position: absolute;
