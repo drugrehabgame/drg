@@ -8,7 +8,8 @@
     $("#main-rating").jRate({
         startColor: "#FFE614",
         endColor: "#FFCB14",
-        rating:0
+        rating:0,
+        precision: 1,
     });
 </script>
 <script>
