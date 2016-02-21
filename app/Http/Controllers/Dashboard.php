@@ -34,7 +34,30 @@ class Dashboard extends Controller
 				$allies[$ally['id']] = array('character_name'=>$user->character_name);
 			}
 		}
-		return view('dashboard.index')->with(array('quests'=>$availableQuests,'profile'=>$profile,'allies'=>$allies, 'journals' => $journal));
+		
+		$userQuests = AppServiceProvider::getUserQuests(Auth::user()->id);
+		
+		$tempQuest = array();
+		foreach ($userQuests['data'] as $userQuest) {
+			$tempQuest[$userQuest['definition']]['state'] = $userQuest['state'];
+		}
+		
+		
+		foreach ($availableQuests as $key => $value) {
+			$value['current'] = false;
+			$value['state'] = 'IN PROGRESS';
+			if (isset($tempQuest[$value['id']])) {
+				$value['current'] = true;
+				$value['state'] = $tempQuest[$value['id']]['state'];
+			}
+			$availableQuests[$key] = $value;
+		}
+		
+		return view('dashboard.index')->with(
+			array('quests'=>$availableQuests,
+				  'profile'=>$profile,
+				  'allies'=>$allies, 
+				  'journals' => $journal));
 
     }
 	

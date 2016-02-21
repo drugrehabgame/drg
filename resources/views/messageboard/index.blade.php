@@ -1,48 +1,85 @@
-@extends('layouts.master')
-@section('title', 'Messageboard')
-@section('content')
-<div class="jumbotron">
-  <div class="container">
-    <h1>Messageboard</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-    <p><a role="button" href="#" class="btn btn-primary btn-lg">Learn more »</a></p>
+@extends('layouts.master') @section('title', 'Messageboard') @section('content')
+<h1>Message Board</h1>
+<div class="messageboard">
+	<div class="row">
+		<div class="col-md-12">
+			<br>
+			<form role="form">
+				<div class="form-group">
+					<label for="messageText">Write a message:</label><input type="email" class="form-control" id="exampleMessageText" />
+  <div class="btn-group">
+    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">Select a recipient <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Ally 1's name</a></li>
+      <li><a href="#">Ally 2's name</a></li>
+      <li><a href="#">Ally 3's name</a></li>
+      <li><a href="#">Ally 4's name</a></li>
+      <li><a href="#">Ally 5's name</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Broadcast to all</a></li>
+    </ul>
   </div>
-</div>
+					<button type="submit" class="btn btn-default">
+					Submit
+				</button>
+				</div>
+			</form>
+			
+			
+			<h3>
+				Message History:
+			</h3>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>You <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Ally's Name <cite>@ 12-Jan-2016 @ 3:53p.m.</cite></small>
+					</blockquote>
+					<blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>You <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Ally's Name <cite>@ 12-Jan-2016 @ 3:53p.m.</cite></small>
+					</blockquote>
+					<blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>You <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Ally's Name <cite>@ 12-Jan-2016 @ 3:53p.m.</cite></small>
+					</blockquote>
+					<blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>You <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Ally's Name <cite>@ 12-Jan-2016 @ 3:53p.m.</cite></small>
+					</blockquote>
+					<blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>You <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Ally's Name <cite>@ 12-Jan-2016 @ 3:53p.m.</cite></small>
+					</blockquote>
+				</div>
+			</div>
 
-<div class="container">
-  <!-- Example row of columns -->
-  <div class="row">
-    <div class="col-md-8">
-      <h2>Messages:</h2>
-      <div id="messagelist">
-      	Loading messages...
-      </div>
-   </div>
-   <form id="message_form">
-   <div class="col-md-3">
-   		<h2>Tell Your Allies</h2>
-   	  	<textarea id="message" required="required" class="form-control"></textarea>
-   </div>
-   <div class="col-md-1">
-   		<h2>&nbsp;</h2>
-		<button type="submit" id="message_submit" class="btn btn-success">Post It</button>   	
-   </div>
-   </form>
-  </div>
+		</div>
+	</div>
 
-  <hr>
-
-  <footer>
-    <p>&copy; 2015 Company, Inc.</p>
-  </footer>
-</div>
-@stop
-
-
-
-
-@push('scripts')
+	
+	@stop
+	
+	@push('scripts')
 <script src="/js/timeago.jquery.js"></script>
+
+<script type='text/javascript'>
+        
+        $(document).ready(function() {
+        
+            $(".dropdown-menu li a").click(function(){
+  var selText = $(this).text();
+  $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+});
+        
+        });
+        
+        </script>
 
 <script>
 	$(function() {
@@ -92,5 +129,3 @@
 	}
 </script>
 @endpush
-
-

@@ -43,6 +43,9 @@
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_<?php echo $value['id'];?>" aria-expanded="false" aria-controls="collapse_<?php echo $value['id'];?>">
                   <?php echo $value['name'];?>
                 </a>
+                <?php if ($value['current']):?>
+                	<span>[In Progress]</span>
+                <?php endif;?>
               </h4>
             </div>
             <div id="collapse_<?php echo $value['id'];?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<?php echo $value['id'];?>">
@@ -51,7 +54,12 @@
                 <?php echo $value['description'];?>
                 <?php endif;?>
                 <br /><br />
-                <a role="button" class="btn btn-success" href="/quests?join=<?php echo $value['id'];?>">Start Quest</a>
+                <?php if ($value['current']):?>
+                	<a role="button" class="btn btn-success" href="/quests?continue=<?php echo $value['id'];?>">Continue Quest</a>
+                <?php else:?>
+                	<a role="button" class="btn btn-success" href="/quests?join=<?php echo $value['id'];?>">Start Quest</a>
+                <?php endif;?>
+                
               </div>
             </div>
           </div>
@@ -145,7 +153,7 @@
               </div>
               <?php endforeach;?>
             </div>
-            <a href="{{url('/allies')}}">More..</a>
+            <!--<a href="{{url('/allies')}}">More..</a>-->
           </div>
           <div role="tabpanel" class="tab-pane fade" id="journal">
             <form id="create-journal" action="{{url('/journal')}}" method="post">

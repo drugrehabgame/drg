@@ -13,7 +13,7 @@
 
 Route::group(['middleware' => ['web', 'guest']], function () {
     Route::get('/', 'Auth\AuthController@getLogin');
-	Route::post('login', 'Auth\AuthController@postLogin');
+	
 });
 
 Route::group(['middleware' => ['web','auth']], function () {
@@ -29,5 +29,5 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('rewards', 'RewardsController@index');
     Route::get('stats', 'StatsController@index');
     Route::get('history', 'HistoryController@index');
-    Route::get('test', 'Dashboard@test');
+    Route::post('dotask', 'QuestsController@dotask');
 });

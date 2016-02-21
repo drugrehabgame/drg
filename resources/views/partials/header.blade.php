@@ -26,12 +26,19 @@
                     <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Send</button>
                 </form>
             </div>
+          <div class="pull-left mini-stats-container">
+           <ul class="user-mini-stats">
+              <li class="level"><i class="fa fa-trophy"></i> Level: <span class="game-actions level"><?php //echo $profile['levels']['points']['name'];?></span></li>
+              <li class="xp"><i class="fa fa-bolt"></i> XP: <span class="game-actions xp"><?php //echo $profile['exp']['points'];?></span></li>
+              <li class="hp"><i class="fa fa-medkit"></i> HP: <span class="game-actions hp"><?php //echo $profile['health']['points'];?></span></li>
+            </ul>
+          </div>
             @endif
             <div class="navbar-right">
                 @if (Auth::check())
                 <span><em class="small">Welcome {{Auth::user()->first_name}}</em></span>
                 <a href="{{url('/goodbye')}}" title="Logout" class="info-btn"><i class="fa fa-sign-out"></i></a>
-                <a href="{{url('/messages')}}" class="info-btn" title="Messages"><i class="fa fa-envelope"></i></a>
+                <a href="{{url('/messageboard')}}" class="info-btn" title="Messages"><i class="fa fa-envelope"></i></a>
                 @else
                     @include('partials.login-form')
                 @endif
