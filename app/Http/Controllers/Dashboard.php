@@ -12,15 +12,26 @@ class Dashboard extends Controller
 {
     public function index()
     {
-        $journal = UserJournal::where('user_id', \Auth::user()->id)
+		$journal = UserJournal::where('user_id', \Auth::user()->id)
             ->orderBy('created_at', 'DESC')->paginate(6);
-    	return response()->view('dashboard.index', [
-            'journals' => $journal
-        ]);
+    	$availableQuests = AppServiceProvider::getAvailableQuests(Auth::user()->id);
+		$userProfile = AppServiceProvider::getUserProfile(Auth::user()->id);
+		$profile = array();
+
+		foreach ($userProfile['scores'] as $key => $value) {
+			$metric_id = $value['metric']['id'];
+			$profile[$metric_id] = array('name'=>$value['metric']['id'],'points'=>$value['value']); 
+		}
+		
+		//$key = array_search('exp', $userProfile['scores']);
+		//var_dump($key);
+		//die();
+		return view('dashboard.index')->with(array('quests'=>$availableQuests,'profile'=>$profile, 'journals' => $journal));
     }
 	
 	public function test()
     {
-    	AppServiceProvider::createUser();
+    	AppServiceProvider::getAvailableQuests();
+		die();
     }
 }
