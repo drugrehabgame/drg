@@ -130,23 +130,32 @@
           </div>
           <div role="tabpanel" class="tab-pane fade" id="journal">
             <form id="create-journal" action="{{url('/journal')}}" method="post">
+              <input type="hidden" name="status" id="journal-status-panel"/>
+              <p class="small pull-left">Mood rating <span id="rating-panel"></span></p>
               <div class="pull-right">
                 <span class="action-ok journal-action"><i class="fa fa-check"></i></span>
-                <span class="action-cancel journal-action"><i class="fa fa-times"></i></span>
               </div>
-              <textarea name="entry" placeholder="Today i feel..." class="form-control"></textarea>
+              <textarea name="entry" placeholder="Today i feel..." class="form-control" id="entry-panel"></textarea>
             </form>
             <hr>
             <p><em class="small pull-right">Past entries</em></p>
+            @foreach($journals as $journal)
             <div class="journal-entry">
-              <p><em>The lord jesus</em></p>
+              <p><em>{{$journal->entry}}</em></p>
+              <p class="small pull-left">Mood rating <span id="rating{{$journal->id}}"></span></p>
+              @push('scripts')
+              <script>
+                $("#rating{{$journal->id}}").jRate({
+                  startColor: "#FFE614",
+                  endColor: "#FFCB14",
+                  readOnly: true,
+                  rating:{{(int)$journal->status}},
+                });
+              </script>
+              @endpush
+              <p class="small pull-right"><em>{{$journal->created_at->diffForHumans()}}</em></p>
             </div>
-            <div class="journal-entry">
-              <p><em>The lord jesus</em></p>
-            </div>
-            <div class="journal-entry">
-              <p><em>The lord jesus</em></p>
-            </div>
+            @endforeach
             <a href="{{url('/journal')}}">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="history">
@@ -240,5 +249,38 @@
     };
     var myLineChart = new Chart(ctx).Line(data, options);
   });
+</script>
+@endpush
+@push('scripts')
+<script>
+  $("#rating-panel").jRate({
+    startColor: "#FFE614",
+    endColor: "#FFCB14",
+    rating:0,
+    precision: 1,
+    onChange: function(rating) {
+      $('#journal-status-panel').val(rating);
+    }
+  });
+</script>
+@endpush
+@push('scripts')
+<script>
+  $('.action-ok').on('click', function(){
+    $('.action-ok').off('click');
+    sendJournal();
+  });
+  function sendJournal(){
+    var data = {
+      _token : "{{ csrf_token() }}",
+      status : $('#journal-status-panel').val(),
+      entry : $('#entry-panel').val(),
+    };
+    $.post("journal",data, function(data) {
+      $('#journal-status-panel').val('');
+      $('#entry-panel').val('');
+      window.location.reload();
+    });
+  }
 </script>
 @endpush

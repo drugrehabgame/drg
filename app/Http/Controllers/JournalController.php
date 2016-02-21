@@ -25,6 +25,9 @@ class JournalController extends Controller
             'user_id' => \Auth::user()->id
         ];
         UserJournal::create($input);
+        if ($request->ajax() || $request->wantsJson()){
+            return response()->json(array('success'=>1));
+        }
         return redirect('journal');
     }
 }

@@ -5,14 +5,6 @@
 
 @push('scripts')
 <script>
-    $("#main-rating").jRate({
-        startColor: "#FFE614",
-        endColor: "#FFCB14",
-        rating:0,
-        precision: 1,
-    });
-</script>
-<script>
     $(function() {
         $('.disable-on-submit').attr('disabled', false);
         $( "#login_form" ).submit(function( event ) {
