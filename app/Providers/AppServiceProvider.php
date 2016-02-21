@@ -32,6 +32,12 @@ class AppServiceProvider extends ServiceProvider
 		return $pl->get('/runtime/player', array('player_id'=>$userId), array('player_id'=>$userId));
 	}
 	
+	public static function getFriends($userId)
+	{
+		$pl = self::bootPlayLife();
+		return $pl->get('/runtime/teams/'.$userId.'/members', array('player_id'=>$userId), array('player_id'=>$userId));
+	}
+	
 	public static function bootPlayLife() 
 	{
 		return $pl = new Playlyfe(

@@ -135,22 +135,15 @@
               </div>
             </div>
             <div class="row allies-row">
+              <div class="col-md-12">
+             	<h4>Friends of <?php echo Auth::user()->character_name;?></h4>		
+              </div>
+              <?php foreach ($allies as $ally):?>
               <div class="col-md-3">
                 <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
-                <P>Name name</P>
+                <p><?php echo $ally['character_name'];?></p>
               </div>
-              <div class="col-md-3">
-                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
-                <p>Jhon hammond</p>
-              </div>
-              <div class="col-md-3">
-                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
-                <p>Caribbean</p>
-              </div>
-              <div class="col-md-3">
-                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
-                <p>Johnny Bravo</p>
-              </div>
+              <?php endforeach;?>
             </div>
             <a href="{{url('/allies')}}">More..</a>
           </div>

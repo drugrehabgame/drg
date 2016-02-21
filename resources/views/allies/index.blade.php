@@ -1,7 +1,7 @@
 @extends('...layouts.master') @section('title', 'Allies') @section('content')
 <div class="row">
 
-  <div class="update-journal">
+  <div class="allies">
     <div class="row">
 
       <div class="col-md-6">
@@ -9,7 +9,7 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-3">
-                <img src="http://lorempixel.com/80/80/"/>
+                <img src="http://lorempixel.com/80/80/" />
               </div>
               <div class="col-md-3">
                 <h4><b>Allison Longo</b></h4>
@@ -36,12 +36,12 @@
         </div>
       </div>
 
-       <div class="col-md-6">
+      <div class="col-md-6">
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="row">
               <div class="col-md-3">
-                <img src="http://lorempixel.com/80/80/"/>
+                <img src="http://lorempixel.com/80/80/" />
               </div>
               <div class="col-md-3">
                 <h4><b>George Banda</b></h4>
@@ -68,12 +68,16 @@
         </div>
       </div>
 
-        <div class="col-md-6">
+
+
+    </div>
+    <div class="row">
+      <div class="col-md-6">
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="row">
               <div class="col-md-3">
-                <img src="http://lorempixel.com/80/80/"/>
+                <img src="http://lorempixel.com/80/80/" />
               </div>
               <div class="col-md-3">
                 <h4><b>Peter Benali</b></h4>
@@ -89,8 +93,31 @@
           </div>
         </div>
       </div>
-
+      
+            <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-3">
+                <img src="http://lorempixel.com/80/80/" />
+              </div>
+              <div class="col-md-3">
+                <h4><b>Icarus Olanga</b></h4>
+                <h5>Oracle</h5></div>
+              <div class="col-md-6">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="messageToAlly" placeholder="Send a message..."> <button type="submit" class="btn btn-default">Send</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
+
   </div>
 
 </div>
