@@ -1,7 +1,13 @@
 @extends('...layouts.master')
 @section('title', 'Dashboard')
+@section('header')
+  <blockquote id="main-quote">
+    Life is very interesting, in the end some of your greatest pains become your greatest strengths.
+    <span class="author">Drew Barrymore, American Actress</span>
+  </blockquote>
+@stop
 @section('content')
-  <div class="row">
+  <div class="row master-page-revert">
     <div class="col-md-4">
       <div class="dashboard-column">
         <div class="row">

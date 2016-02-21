@@ -31,6 +31,7 @@
 
   <body>
     @include('partials.header')
+    @yield('header')
 
     @yield('fullscreen')
     <div class="container master-page">

@@ -55,10 +55,6 @@
         </div>
     </nav>
 </header>
-<blockquote id="main-quote">
-    Life is very interesting, in the end some of your greatest pains become your greatest strengths.
-    <span class="author">Drew Barrymore, American Actress</span>
-</blockquote>
 @push('scripts')
 <script>
     $("#main-rating").jRate({

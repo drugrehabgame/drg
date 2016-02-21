@@ -140,6 +140,12 @@ header nav.navbar #mood-form button{
     height: 50px;
 }
 /*CONTENT*/
+.master-page{
+    margin-top: 90px;
+}
+.master-page-revert{
+    margin-top: -70px;
+}
 #main-quote{
     text-align: center;
     width: 90%;
