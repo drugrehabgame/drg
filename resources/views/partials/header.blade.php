@@ -19,8 +19,9 @@
             <div class="pull-left mood-form-container">
                 <form action="{{url('/journal')}}" method="POST" id="mood-form">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="status" id="journal-status-header"/>
                     <div class="form-group pull-left text-area-container">
-                        <textarea name="entry" class="form-control" placeholder="Enter your status"></textarea>
+                        <textarea name="entry" class="form-control" placeholder="Enter your status" id="entry-header"></textarea>
                     </div>
                     <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Send</button>
                 </form>
@@ -41,3 +42,31 @@
         </div>
     </nav>
 </header>
+@push('scripts')
+<script>
+    $("#main-rating").jRate({
+        startColor: "#FFE614",
+        endColor: "#FFCB14",
+        rating:0,
+        precision: 1,
+        onChange: function(rating) {
+            $('#journal-status-header').val(rating);
+        }
+    });
+</script>
+<script>
+    $('#mood-form').on('submit', function(e){
+        e.preventDefault();
+        var data = {
+            _token : "{{ csrf_token() }}",
+            status : $('#journal-status-header').val(),
+            entry : $('#entry-header').val(),
+        };
+        $.post("journal",data, function(data) {
+            $('#journal-status-header').val('');
+            $('#entry-header').val('');
+            window.location.reload();
+        });
+    });
+</script>
+@endpush

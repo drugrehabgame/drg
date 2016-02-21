@@ -144,8 +144,11 @@ header nav.navbar #mood-form{
 .journal-action{
     cursor: pointer;
 }
-.journal-action.action-cancel{
-    color: #b41919;
+.journal-action.action-ok{
+    transition: all 300ms;
+}
+.journal-action.action-ok:hover{
+    color: #FFFFFF;
 }
 .update-journal .mood-rating{
     float: left;
