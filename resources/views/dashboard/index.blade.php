@@ -55,9 +55,9 @@
                 <?php endif;?>
                 <br /><br />
                 <?php if ($value['current']):?>
-                	<a role="button" class="btn btn-success" href="/quests?continue=<?php echo $value['id'];?>">Continue Quest</a>
+                	<a role="button" class="btn btn-success" href="<?php echo url('/quests?continue='. $value['id']);?>">Continue Quest</a>
                 <?php else:?>
-                	<a role="button" class="btn btn-success" href="/quests?join=<?php echo $value['id'];?>">Start Quest</a>
+                	<a role="button" class="btn btn-success" href="<?php echo url('/quests?join=' . $value['id']); ?>">Start Quest</a>
                 <?php endif;?>
                 
               </div>

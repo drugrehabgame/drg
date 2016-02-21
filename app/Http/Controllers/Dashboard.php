@@ -14,7 +14,7 @@ class Dashboard extends Controller
     public function index()
     {
 		$journal = UserJournal::where('user_id', \Auth::user()->id)
-            ->orderBy('created_at', 'DESC')->paginate(6);
+            ->orderBy('created_at', 'DESC')->paginate(4);
     	
     	$availableQuests = AppServiceProvider::getAvailableQuests(Auth::user()->id);
 		$userProfile = AppServiceProvider::getUserProfile(Auth::user()->id);
