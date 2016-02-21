@@ -9,11 +9,12 @@
             <img src="http://lorempixel.com/200/200/" class="profile-image"/>
           </div>
           <div class="col-md-8">
-            <h3>{{Auth::user()->first_name}} {{Auth::user()->first_name}}</h3>
+            <h3>{{Auth::user()->character_name}}</h3>
+            
             <ul class="user-dashboard">
-              <li class="level"><i class="fa fa-trophy"></i> Level <span class="game-actions level">5</span></li>
-              <li class="xp"><i class="fa fa-bolt"></i> XP: <span class="game-actions xp">200</span></li>
-              <li class="hp"><i class="fa fa-medkit"></i> HP: <span class="game-actions hp">233</span></li>
+              <li class="level"><i class="fa fa-trophy"></i> Level <span class="game-actions level"><?php echo $profile['levels']['points']['name'];?></span></li>
+              <li class="xp"><i class="fa fa-bolt"></i> XP: <span class="game-actions xp"><?php echo $profile['exp']['points'];?></span></li>
+              <li class="hp"><i class="fa fa-medkit"></i> HP: <span class="game-actions hp"><?php echo $profile['health']['points'];?></span></li>
             </ul>
           </div>
         </div>
@@ -34,6 +35,30 @@
       <div class="dashboard-column">
         <h3 class="text-center"><a href="{{url('/quests')}}"><i class="fa fa-binoculars"></i> Quests</a></h3>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <?php foreach($quests as $key => $value): ?>
+		  
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading_<?php echo $value['id'];?>">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_<?php echo $value['id'];?>" aria-expanded="false" aria-controls="collapse_<?php echo $value['id'];?>">
+                  <?php echo $value['name'];?>
+                </a>
+              </h4>
+            </div>
+            <div id="collapse_<?php echo $value['id'];?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<?php echo $value['id'];?>">
+              <div class="panel-body">
+              	<?php if (isset($value['description'])):?>
+                <?php echo $value['description'];?>
+                <?php endif;?>
+                <br /><br />
+                <a role="button" class="btn btn-success" href="/quests?join=<?php echo $value['id'];?>">Start Quest</a>
+              </div>
+            </div>
+          </div>
+          
+          <?php endforeach;?>
+          
+          <!--
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
               <h4 class="panel-title">
@@ -76,6 +101,7 @@
               </div>
             </div>
           </div>
+          -->
         </div>
       </div>
    </div>

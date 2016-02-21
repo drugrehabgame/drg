@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Playlyfe\Sdk\Playlyfe;
 use Playlyfe\Sdk\PlaylyfeException;
+use Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,23 +20,39 @@ class AppServiceProvider extends ServiceProvider
          
     }
 	
-	public static function createUser()
+	public static function getAvailableQuests($userId)
 	{
 		$pl = self::bootPlayLife();
-		var_dump($pl->get("/admin/players", []));
-		die('test');
+		return $pl->get('/runtime/definitions/processes', array('player_id'=>$userId), array('player_id'=>$userId));
+	}
+	
+	public static function getUserProfile($userId)
+	{
+		$pl = self::bootPlayLife();
+		return $pl->get('/runtime/player', array('player_id'=>$userId), array('player_id'=>$userId));
 	}
 	
 	public static function bootPlayLife() 
 	{
 		return $pl = new Playlyfe(
-        		array(
-          			'version' => 'v2',
-          			'client_id' => "OTNkODhiOWItMDE1Mi00MWNjLWI4Y2MtZTU3YTBjNjVkNjBi",
-          			'client_secret' => "ZmIzZWE1MDgtOTNkOS00ODA2LTg3NzEtMzQyN2JhOGRhMTMyNTM2ZDZiZjAtZDdjNC0xMWU1LTk5MDgtZWRhMTI3NmM5M2E5",
-        	  		'type' => 'client'
-        		)
-    	);
+            array(
+              'client_id' => "ZTEzMmVjYmEtMDk5NC00YzhmLTgyYzctNDBjNTg1Mzc5MjJi",
+              'client_secret' => "M2RhOWU3NzAtYjlkYi00YjY2LWEwOTAtZTVmMTE3YWJiMzgzNDkwODM0NjAtZDgzYy0xMWU1LWEyYzEtZDNkY2EyMTBiMTBk",
+              'type' => 'client',
+              'store' => function($access_token) {
+              	Session::put('access_token', $access_token);
+              },
+              'load' => function() {
+                if(Session::has('access_token')){
+                  return Session::get('access_token');
+                  //return $_COOKIE['access_token'];
+                }
+                else {
+                  return null;
+                }
+              }
+            )
+         );
 	}
 
     /**
