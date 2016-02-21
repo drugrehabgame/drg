@@ -8,6 +8,9 @@
 .page-title{font-family: 'Open Sans';font-size: 2em;font-weight: bold;text-transform: uppercase;color: #FFFFFF;text-align: center}
 #logo{padding: 0px 15px;}
 #logo img{width: 87px;}
+ul li{list-style: none}
+header .user-mini-stats{margin-top: 14px;}
+header .user-mini-stats li{display: inline;margin-right: 20px;}
 a{transition: all 300ms}
 a:hover,a:focus{
     text-decoration: none !important;
