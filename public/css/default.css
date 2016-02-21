@@ -6,6 +6,13 @@
 .scroll{overflow: scroll;height: 300px; width: 100%;padding: 10px}
 .slider-container{height: 400px;margin-bottom: 20px}
 .page-title{font-family: 'Open Sans';font-size: 2em;font-weight: bold;text-transform: uppercase;color: #FFFFFF;text-align: center}
+#logo{padding: 0px 15px;}
+#logo img{width: 87px;}
+a{transition: all 300ms}
+a:hover,a:focus{
+    text-decoration: none !important;
+    opacity: 0.7;
+}
 .slider-container p{
     font-size: 3em;
     font-family: 'Open Sans';
@@ -66,7 +73,6 @@ background: url('img/bground.jpg') no-repeat center center fixed;
   	background-color:#333;
   	font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
 }
-a{transition: all 300ms}
 .shorter-page{width: 60%;margin: 0 auto}
 .media-object{
     display: block;
@@ -113,12 +119,23 @@ header nav.navbar #mood-form .text-area-container textarea{
 header nav.navbar #mood-form button{
     height: 50px;
 }
-header nav.navbar #mood-form{
-
-}
 /*CONTENT*/
-.master-page{
-    margin-top: 120px;
+#main-quote{
+    text-align: center;
+    width: 90%;
+    max-width: 960px;
+    margin: 90px auto 20px;
+    border-left: none;
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 10px;
+    font-style: italic;
+    padding: 15px;
+}
+#main-quote .author{
+    display: block;
+    text-align: right;
+    font-size: 0.8em;
+    margin-top: 20px;
 }
 .green-bg{
     padding: 10px;
@@ -131,6 +148,9 @@ header nav.navbar #mood-form{
     background-color: rgba(106, 192, 134, 0.5);
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     min-height: 685px;
+}
+.dashboard-column .nav-tabs > li{
+    margin-bottom: 1px;
 }
 .dashboard-column .user-dashboard{
     padding-left: 0px;
@@ -190,7 +210,7 @@ header nav.navbar #mood-form{
     height: auto;
 }
 .journal-entry{
-    padding: 20px 10px;
+    padding: 20px 10px 40px;
     clear: both;
     background-color: #C8ECD4;
     margin: 10px 0;

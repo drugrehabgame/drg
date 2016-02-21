@@ -8,7 +8,9 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{url('/')}}">Drug Rehab Game</a>
+            <a class="navbar-brand" href="{{url('/')}}" title="Drug Rehab Game" id="logo">
+                <img src="{{url('/css/img/drg.png')}}"/>
+            </a>
           </div>
         <div id="navbar" class="navbar-collapse collapse">
             @if (Auth::check())
@@ -49,6 +51,10 @@
         </div>
     </nav>
 </header>
+<blockquote id="main-quote">
+    Life is very interesting, in the end some of your greatest pains become your greatest strengths.
+    <span class="author">Drew Barrymore, American Actress</span>
+</blockquote>
 @push('scripts')
 <script>
     $("#main-rating").jRate({
