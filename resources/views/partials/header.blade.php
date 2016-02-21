@@ -14,7 +14,7 @@
             @if (Auth::check())
             <div class="moodbox pull-left">
                 <span class="small">Mood Rating</span><br>
-                <span class="jRate"></span>
+                <span id="main-rating"></span>
             </div>
             <div class="pull-left mood-form-container">
                 <form action="{{url('/journal')}}" method="POST" id="mood-form">

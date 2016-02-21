@@ -1,21 +1,22 @@
 .ui-loading { background:url('img/indicator.gif') no-repeat right center }
 .btn-success{background-image: none;background-color: #2FAD58;}
+.white-color{color: #FFFFFF}
 body{
 background: url('img/bground.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-	
   	background-color:#333;
   	font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
 }
 a{transition: all 300ms}
-
+.shorter-page{width: 60%;margin: 0 auto}
 .media-object{
     display: block;
     width: 80px;
 }
+img{border-radius: 5px}
 
 /*HEADER*/
 header nav.navbar{
@@ -63,7 +64,11 @@ header nav.navbar #mood-form{
 .master-page{
     margin-top: 120px;
 }
-
+.green-bg{
+    padding: 10px;
+    background-color: rgba(106, 192, 134, 0.5);
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
 .dashboard-column{
     padding: 10px;
     background-color: rgba(106, 192, 134, 0.5);
@@ -140,6 +145,13 @@ header nav.navbar #mood-form{
 }
 .journal-action.action-cancel{
     color: #b41919;
+}
+.update-journal .mood-rating{
+    float: left;
+    margin-right: 20px;
+}
+.update-journal img{
+    width: 100%;
 }
 /*FOOTER*/
 footer {
