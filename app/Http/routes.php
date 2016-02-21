@@ -29,4 +29,5 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('rewards', 'RewardsController@index');
     Route::get('stats', 'StatsController@index');
     Route::get('history', 'HistoryController@index');
+    Route::get('test', 'Dashboard@test');
 });
