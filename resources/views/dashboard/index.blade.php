@@ -12,7 +12,7 @@
       <div class="dashboard-column">
         <div class="row">
           <div class="col-md-4">
-            <img src="http://lorempixel.com/200/200/" class="profile-image"/>
+            <img src="{{url('/css/img/user.jpg')}}" class="profile-image"/>
           </div>
           <div class="col-md-8">
             <h3>{{Auth::user()->character_name}}</h3>
@@ -39,7 +39,7 @@
     </div>
     <div class="col-md-4">
       <div class="dashboard-column">
-        <h3 class="text-center"><a href="{{url('/quests')}}"><i class="fa fa-binoculars"></i> Quests</a></h3>
+        <h3 class="text-center"><i class="fa fa-binoculars"></i> Quests</h3>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <?php foreach($quests as $key => $value): ?>
 		  
