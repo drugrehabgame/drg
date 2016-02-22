@@ -2,15 +2,9 @@
 @section('title', 'Quests')
 @section('content')
 
-<?php /*
+
 <div class="row">
-       <div class="col-xs-2 col-md-1 col-lg-1">
-         <button type="button" class="btn btn-default btn-s">
-          <span class="glyphicon glyphicon-chevron-left"></span> 
-        </button>
-       </div>
-
-
+     
 
          <div class="col-xs-12 col-md-9 col-lg-9">
       <div class="newquest-column">
@@ -19,21 +13,11 @@
       
   <!--<div class="panel panel-default">          
   <!-- Default panel contents -->
-  <div class="panel-heading"><h3><?php $gamedetails['definition']['name'];
- ?>
-  <div class="panel-body">
-    <p>Step 5. admitt to god, ourselves and to another human...</p>
-  </div>
-
-  <!-- List group -->
-  <ul class="list-group">
-    <li class="list-group-item text-right"><button type="button" class="btn btn-default">Details</button> <button type="button" class="btn btn-success">Join Quest</button> <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-right"></span></button></li>
-  </ul>
-
+  
+  
+  
+  
 <div class="row">
-   <div class="col-xs-2 col-md-1 col-lg-1">
-        
-   </div>
    <div class="col-md-9">
       
      <div class="panel panel-default">          

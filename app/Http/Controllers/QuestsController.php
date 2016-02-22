@@ -19,10 +19,10 @@ class QuestsController extends Controller
     	} else {
     		$gameId = $request->continue;
     	}
-
+		
 		$gameDetails = AppServiceProvider::getGameDetails(Auth::user()->id, $gameId);
 		$gameTasks = AppServiceProvider::getGameTasks(Auth::user()->id, $gameId);
-		//var_dump($gameDetails,'<br /><br />',$gameTasks); die();
+		
 		return view('quests.index')->with(array('gamedetails'=>$gameDetails,'gametasks'=>$gameTasks,'gameId'=>$gameId));
     }
 	

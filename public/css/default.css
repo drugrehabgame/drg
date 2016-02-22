@@ -1,9 +1,9 @@
 .ui-loading { background:url('img/indicator.gif') no-repeat right center }
 hr{border-top: 1px solid #03C9A9 !important;}
 .nav-tabs{border-bottom: 1px solid #03C9A9 !important;}
-.btn-success{background-image: none;background-color: #4183D7;border: none;transition: all 300ms}
+.btn-success{background-image: none;background-color: rgb(61, 201, 70);border: none;transition: all 300ms}
 .btn-success:focus, .btn-success:hover{
-    background-color: #03C9A9;
+    background-color: rgb(117, 217, 124);
 }
 .white-color{color: #FFFFFF}
 .full-img{width: 100%; height: auto}
@@ -39,9 +39,10 @@ a:hover,a:focus{
     color: #fff;
     margin-bottom: 30px;
     margin-top: 120px;
+    text-shadow: 2px 2px rgb(128,128,128);
 }
 .read-more{
-    color: #fff;
+    color: #000;
     font-weight: bold;
     text-transform: uppercase;
     font-family: Open Sans;
@@ -82,13 +83,19 @@ a:hover,a:focus{
     display: block;
 }
 body{
-    background-color: #fff;
+    background-color: #000;
 /*background: url('img/bground.jpg') no-repeat center center fixed;*/
 /*-webkit-background-size: cover;*/
 /*-moz-background-size: cover;*/
 /*-o-background-size: cover;*/
 /*background-size: cover;*/
 /*background-color:#333;*/
+  
+  background: black; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white, black, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, black, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, black, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, black, black); /* Standard syntax */
 
 font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
 }
@@ -102,7 +109,7 @@ img{border-radius: 5px}
 /*HEADER*/
 header nav.navbar{
     /*background-color: rgba(106, 192, 134, 0.8);*/
-    background-color: rgba(3, 201, 169, 0.8);
+    background-color: rgb(128, 128, 128);
     color: #fff;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-bottom: 1px solid #4ECDC4;
@@ -114,6 +121,7 @@ header nav.navbar a{
 header nav.navbar .container{
     margin-top: 8px;
 }
+
 header nav.navbar .info-btn{
     display: inline-block;
     padding: 10px 8px;
@@ -127,8 +135,9 @@ header nav.navbar .info-btn:hover{
 }
 header nav.navbar .moodbox{
     text-align: center;
-    margin-left: 40px;
+    margin-left: 20px;
 }
+
 header nav.navbar #mood-form .text-area-container{
     height: 50px;
     margin: 0px 3px 0 30px;
@@ -136,9 +145,25 @@ header nav.navbar #mood-form .text-area-container{
 header nav.navbar #mood-form .text-area-container textarea{
     height: 50px;
 }
+
 header nav.navbar #mood-form button{
-    height: 50px;
+  
+ /* background-color: rgb(61, 201, 70);*/
 }
+
+
+
+header nav.navbar .navbar-toggle {
+     background-color: rgb(0,0,0);
+     color:#ffffff;
+}
+
+/*-- change navbar dropdown color --*/
+header nav.navbar .navbar-nav .open .navbar-toggle>li>a, .navbar .navbar-nav .open .navbar-toggle {
+    background-color: rgb(0,0,0);
+    color:#ffffff;
+}
+
 /*CONTENT*/
 .master-page{
     margin-top: 90px;
@@ -152,7 +177,7 @@ header nav.navbar #mood-form button{
     max-width: 960px;
     margin: 90px auto 20px;
     border-left: none;
-    background-color: #E4F1FE;
+    background-color: rgb(240,255,240);
     border-radius: 10px;
     font-style: italic;
     padding: 15px;
@@ -173,7 +198,9 @@ header nav.navbar #mood-form button{
 }
 .dashboard-column{
     padding: 10px;
-    background-color: rgba(3, 201, 169, 0.5);
+   /* background-color:  rgba(154, 255, 154, 0.7);*/
+    background-color: rgb(255, 255, 255);
+  
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     min-height: 685px;
     border-radius: 10px;
@@ -218,7 +245,7 @@ header nav.navbar #mood-form button{
 .dashboard-column .nav-tabs > li.active > a,
 .dashboard-column .nav-tabs > li.active > a:focus,
 .dashboard-column .nav-tabs > li.active > a:hover{
-    background-color: #4183D7;
+    background-color: rgb(61,201,70);
     border-color: transparent;
     color: #FFFFFF;
 }
@@ -243,10 +270,10 @@ header nav.navbar #mood-form button{
 .journal-entry{
     padding: 20px 10px 40px;
     clear: both;
-    background-color: #81CFE0;
+    background-color: rgb(245,245,245);
     margin: 10px 0;
     border-radius: 5px;
-    border-bottom: 1px solid #03C9A9;
+    border-bottom: 1px solid #c0c0c0;
 }
 .journal-action{
     cursor: pointer;

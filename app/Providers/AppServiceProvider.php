@@ -67,7 +67,8 @@ class AppServiceProvider extends ServiceProvider
 	{
 		$pl = self::bootPlayLife();
 		$request = array();
-		return $pl->get('/runtime/processes/'.$userId.'/'.$gameId.'/triggers', ["player_id" =>$userId], $request);
+		$tasks = $pl->get('/runtime/processes/'.$userId.'/'.$gameId.'/triggers', ["player_id" =>$userId], $request);
+		return $tasks;
 	}
 	
 	public static function doTask($userId, $gameId, $trigger) 

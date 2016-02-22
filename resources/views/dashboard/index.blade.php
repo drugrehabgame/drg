@@ -131,8 +131,8 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active" id="allies">
             <div class="media">
-              <div class="media-left">
-                  <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
+              <div class="col-md-4">
+                  <img src="{{url('/css/img/legolas.jpg')}}" class="profile-image"/>
               </div>
               <div class="media-body">
                 <h4 class="media-heading">You are an inspiration, Keep up the good work</h4>
@@ -140,8 +140,8 @@
               </div>
             </div>
             <div class="media">
-              <div class="media-left">
-                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
+              <div class="col-md-4">
+               <img src="{{url('/css/img/gandalf.jpg')}}" class="profile-image"/>
               </div>
               <div class="media-body">
                 <h4 class="media-heading">Hey bro, loving your progress!</h4>
@@ -154,7 +154,7 @@
               </div>
               <?php foreach ($allies as $ally):?>
               <div class="col-md-3">
-                <img class="media-object" src="http://lorempixel.com/200/200/" alt="Allies">
+                <img src="{{url('/css/img/gandalf.jpg')}}" class="profile-image"/>
                 <p><?php echo $ally['character_name'];?></p>
               </div>
               <?php endforeach;?>
