@@ -1,17 +1,97 @@
 .ui-loading { background:url('img/indicator.gif') no-repeat right center }
-.btn-success{background-image: none;background-color: #2FAD58;}
-.white-color{color: #FFFFFF}
-.green-text{}
-body{
-background: url('img/bground.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  	background-color:#333;
-  	font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+hr{border-top: 1px solid #03C9A9 !important;}
+.nav-tabs{border-bottom: 1px solid #03C9A9 !important;}
+.btn-success{background-image: none;background-color: #4183D7;border: none;transition: all 300ms}
+.btn-success:focus, .btn-success:hover{
+    background-color: #03C9A9;
 }
+.white-color{color: #FFFFFF}
+.full-img{width: 100%; height: auto}
+.btn-big{width: 400px; padding: 14px; font-size: 1.2em;text-transform: uppercase;font-weight: bold; text-shadow: 1px 1px 3px rgba(117, 182, 127, 0.5)}
+.scroll{overflow: scroll;height: 300px; width: 100%;padding: 10px}
+.slider-container{height: 400px;margin-bottom: 20px}
+.panel-heading h3{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.page-title{font-family: 'Open Sans';font-size: 2em;font-weight: bold;text-transform: uppercase;color: #FFFFFF;text-align: center}
+#logo{padding: 0px 15px;}
+#logo img{width: 87px;}
+.panel-body{font-size: 1.15em; line-height: 180%;}
+.panel-body p{}
+.panel-body ul li{
+    list-style-type: circle;
+    margin-bottom: 10px;
+}
+ul li{list-style: none}
+header .user-mini-stats{margin-top: 14px;}
+header .user-mini-stats li{display: inline;margin-right: 20px;}
 a{transition: all 300ms}
+a:hover,a:focus{
+    text-decoration: none !important;
+    opacity: 0.7;
+}
+.slider-container p{
+    font-size: 3em;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 120px;
+}
+.read-more{
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Open Sans;
+    text-align: right;
+    display: block;
+    padding-top: 10px;
+    font-style: italic;
+    text-decoration: underline;
+}
+.slideshow{
+    max-height: 580px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+.slideshow img{
+    width: 100%;
+    height: auto;
+}
+.home-column{
+    background-color: #E4F1FE;
+    padding: 10px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+.home-column h3{
+    border-bottom: 1px dashed rgb(118, 182, 128);
+    padding-bottom: 10px;
+}
+.min-height-home{
+    height: 300px;
+    padding: 10px;
+}
+#register-form .btn-big{
+    margin: 0 auto;
+    display: block;
+}
+body{
+    background-color: #fff;
+/*background: url('img/bground.jpg') no-repeat center center fixed;*/
+/*-webkit-background-size: cover;*/
+/*-moz-background-size: cover;*/
+/*-o-background-size: cover;*/
+/*background-size: cover;*/
+/*background-color:#333;*/
+
+font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+}
 .shorter-page{width: 60%;margin: 0 auto}
 .media-object{
     display: block;
@@ -21,10 +101,11 @@ img{border-radius: 5px}
 
 /*HEADER*/
 header nav.navbar{
-    background-color: rgba(106, 192, 134, 0.8);
+    /*background-color: rgba(106, 192, 134, 0.8);*/
+    background-color: rgba(3, 201, 169, 0.8);
     color: #fff;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    border-bottom: 1px solid #5CB077;
+    border-bottom: 1px solid #4ECDC4;
     height: 65px;
 }
 header nav.navbar a{
@@ -42,7 +123,7 @@ header nav.navbar .info-btn{
     margin-top: 5px;
 }
 header nav.navbar .info-btn:hover{
-    background-color: #42A462;
+    background-color: #4183D7;
 }
 header nav.navbar .moodbox{
     text-align: center;
@@ -58,23 +139,47 @@ header nav.navbar #mood-form .text-area-container textarea{
 header nav.navbar #mood-form button{
     height: 50px;
 }
-header nav.navbar #mood-form{
-
-}
 /*CONTENT*/
 .master-page{
-    margin-top: 120px;
+    margin-top: 90px;
+}
+.master-page-revert{
+    margin-top: -70px;
+}
+#main-quote{
+    text-align: center;
+    width: 90%;
+    max-width: 960px;
+    margin: 90px auto 20px;
+    border-left: none;
+    background-color: #E4F1FE;
+    border-radius: 10px;
+    font-style: italic;
+    padding: 15px;
+    box-shadow: 1px 1px 7px rgba(0,0,0,0.3);
+}
+#main-quote .author{
+    display: block;
+    text-align: right;
+    font-size: 0.8em;
+    margin-top: 20px;
 }
 .green-bg{
     padding: 10px;
-    background-color: rgba(106, 192, 134, 0.5);
+    /*background-color: rgba(106, 192, 134, 0.5);*/
+    background-color: rgba(3, 201, 169, 0.5);
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    border-radius: 10px;
 }
 .dashboard-column{
     padding: 10px;
-    background-color: rgba(106, 192, 134, 0.5);
+    background-color: rgba(3, 201, 169, 0.5);
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     min-height: 685px;
+    border-radius: 10px;
+}
+.dashboard-column .nav-tabs > li{
+    margin-bottom: 1px;
 }
 .dashboard-column .user-dashboard{
     padding-left: 0px;
@@ -91,7 +196,9 @@ header nav.navbar #mood-form{
 .dashboard-column .profile-image{
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 }
 
 .dashboard-column h3{
@@ -101,7 +208,7 @@ header nav.navbar #mood-form{
 .dashboard-column .dashboard-section{
     margin: 15px 0px;
     padding: 15px 0;
-    border-top: 1px solid #88CD9E;
+    border-top: 1px solid #03C9A9;
 }
 .dashboard-column .nav-tabs > li > a{
     text-transform: uppercase;
@@ -111,7 +218,7 @@ header nav.navbar #mood-form{
 .dashboard-column .nav-tabs > li.active > a,
 .dashboard-column .nav-tabs > li.active > a:focus,
 .dashboard-column .nav-tabs > li.active > a:hover{
-    background-color: #2FAD58;
+    background-color: #4183D7;
     border-color: transparent;
     color: #FFFFFF;
 }
@@ -134,12 +241,12 @@ header nav.navbar #mood-form{
     height: auto;
 }
 .journal-entry{
-    padding: 20px 10px;
+    padding: 20px 10px 40px;
     clear: both;
-    background-color: #C8ECD4;
+    background-color: #81CFE0;
     margin: 10px 0;
     border-radius: 5px;
-    border-bottom: 1px solid #79C692;
+    border-bottom: 1px solid #03C9A9;
 }
 .journal-action{
     cursor: pointer;

@@ -1,7 +1,13 @@
 @extends('...layouts.master')
 @section('title', 'Dashboard')
+@section('header')
+  <blockquote id="main-quote">
+    Life is very interesting, in the end some of your greatest pains become your greatest strengths.
+    <span class="author">Drew Barrymore, American Actress</span>
+  </blockquote>
+@stop
 @section('content')
-  <div class="row">
+  <div class="row master-page-revert">
     <div class="col-md-4">
       <div class="dashboard-column">
         <div class="row">
@@ -10,7 +16,7 @@
           </div>
           <div class="col-md-8">
             <h3>{{Auth::user()->character_name}}</h3>
-            
+
             <ul class="user-dashboard">
               <li class="level"><i class="fa fa-trophy"></i> Level: <span class="game-actions level"><?php echo $profile['levels']['points']['name'];?></span></li>
               <li class="xp"><i class="fa fa-bolt"></i>  XP: <span class="game-actions xp"><?php echo $profile['exp']['points'];?></span></li>
@@ -55,9 +61,9 @@
                 <?php endif;?>
                 <br /><br />
                 <?php if ($value['current']):?>
-                	<a role="button" class="btn btn-success" href="/quests?continue=<?php echo $value['id'];?>">Continue Quest</a>
+                	<a role="button" class="btn btn-success" href="<?php echo url('/quests?continue='. $value['id']);?>">Continue Quest</a>
                 <?php else:?>
-                	<a role="button" class="btn btn-success" href="/quests?join=<?php echo $value['id'];?>">Start Quest</a>
+                	<a role="button" class="btn btn-success" href="<?php echo url('/quests?join=' . $value['id']); ?>">Start Quest</a>
                 <?php endif;?>
                 
               </div>
@@ -153,7 +159,7 @@
               </div>
               <?php endforeach;?>
             </div>
-            <!--<a href="{{url('/allies')}}">More..</a>-->
+            <a href="{{url('/allies')}}" class="read-more">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="journal">
             <form id="create-journal" action="{{url('/journal')}}" method="post">
@@ -183,14 +189,14 @@
               <p class="small pull-right"><em>{{$journal->created_at->diffForHumans()}}</em></p>
             </div>
             @endforeach
-            <a href="{{url('/journal')}}">More..</a>
+            <a href="{{url('/journal')}}" class="read-more">More..</a>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="history">
             <ul>
               <li>Mon 22-Feb-2016 @ 3:40 mood set to 3/4</li>
               <li>Mon 22-Feb-2016 @ 3:40 mood set to 3/4</li>
             </ul>
-            <a href="{{url('/history')}}">More..</a>
+            <a href="{{url('/history')}}" class="read-more">More..</a>
           </div>
         </div>
       </div>

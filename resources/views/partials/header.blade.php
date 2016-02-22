@@ -8,7 +8,9 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{url('/')}}">Drug Rehab Game</a>
+            <a class="navbar-brand" href="{{url('/')}}" title="Drug Rehab Game" id="logo">
+                <img src="{{url('/css/img/drg.png')}}"/>
+            </a>
           </div>
         <div id="navbar" class="navbar-collapse collapse">
             @if (Auth::check())
@@ -28,9 +30,13 @@
             </div>
           <div class="pull-left mini-stats-container">
            <ul class="user-mini-stats">
-              <li class="level"><i class="fa fa-trophy"></i> Level: <span class="game-actions level"><?php //echo $profile['levels']['points']['name'];?></span></li>
-              <li class="xp"><i class="fa fa-bolt"></i> XP: <span class="game-actions xp"><?php //echo $profile['exp']['points'];?></span></li>
-              <li class="hp"><i class="fa fa-medkit"></i> HP: <span class="game-actions hp"><?php //echo $profile['health']['points'];?></span></li>
+              <li class="level"><i class="fa fa-trophy"></i> Level: <span class="game-actions level">
+                      {{$UserProfile['levels']['points']['name']}}</span>
+              </li>
+              <li class="xp"><i class="fa fa-bolt"></i> XP: <span class="game-actions xp">
+                      {{$UserProfile['exp']['points']}}</span></li>
+              <li class="hp"><i class="fa fa-medkit"></i> HP: <span class="game-actions hp">
+                      {{$UserProfile['health']['points']}}</span></li>
             </ul>
           </div>
             @endif
