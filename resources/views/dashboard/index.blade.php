@@ -12,8 +12,8 @@
             <h3>{{Auth::user()->character_name}}</h3>
             
             <ul class="user-dashboard">
-              <li class="level"><i class="fa fa-trophy"></i> Level <span class="game-actions level"><?php echo $profile['levels']['points']['name'];?></span></li>
-              <li class="xp"><i class="fa fa-bolt"></i> XP: <span class="game-actions xp"><?php echo $profile['exp']['points'];?></span></li>
+              <li class="level"><i class="fa fa-trophy"></i> Level: <span class="game-actions level"><?php echo $profile['levels']['points']['name'];?></span></li>
+              <li class="xp"><i class="fa fa-bolt"></i>  XP: <span class="game-actions xp"><?php echo $profile['exp']['points'];?></span></li>
               <li class="hp"><i class="fa fa-medkit"></i> HP: <span class="game-actions hp"><?php echo $profile['health']['points'];?></span></li>
             </ul>
           </div>

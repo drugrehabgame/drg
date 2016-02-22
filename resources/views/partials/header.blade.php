@@ -23,7 +23,7 @@
                     <div class="form-group pull-left text-area-container">
                         <textarea name="entry" class="form-control" placeholder="Enter your status" id="entry-header"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Send</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-check"></i></button>
                 </form>
             </div>
           <div class="pull-left mini-stats-container">
