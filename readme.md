@@ -14,7 +14,7 @@ This game is a tool that can help many people in the fight against drug addictio
 
 The Drug Rehab Game is a not-for-profit project and is entirely supported by volunteer contributions (whether it be money or time).
  
-If you would like to help out in any way with the development of the Drug Rehab Game please contact us via email at drugrehabgame@gmail.com or by phone on +61408 088 473.
+If you would like to help out in any way with the development of the Drug Rehab Game please contact us via email at drugrehabgame@gmail.com.
  
 We are always in need of assistance so just let us know you’re active and willing and we’ll give you something to work on.
 
