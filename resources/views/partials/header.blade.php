@@ -52,7 +52,7 @@
             @endif
             <div class="navbar-right">
                 @if (Auth::check())
-                <span><em class="small">Welcome {{Auth::user()->first_name}}</em></span>
+                <span><em class="small">Welcome {{Auth::user()->character_name}}</em></span>
                 <a href="{{url('/goodbye')}}" title="Logout" class="info-btn"><i class="fa fa-sign-out"></i></a>
                 <a href="{{url('/messageboard')}}" class="info-btn" title="Messages"><i class="fa fa-envelope"></i></a>
                 @else
